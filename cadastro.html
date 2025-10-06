@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="docs/CSS/style.css">
 </head>
 <body>
-    <input type="text" placeholder="Usuario" id="userCad"><br>
-    <input type="password" placeholder="senha" id="keyCad"><br>
+    <section class="login">
+        <div class="container">
+            <div class="card">
+                <h1>Cadastrar</h1>
+                <input type="text" placeholder="Usuario" id="userCad"><br>
+                <input type="password" placeholder="senha" id="keyCad"><br>
+                <button class="ent-btn" onclick="cad()">Cadastrar</button>
+            </div>
+        </div>
+    </section>
     
-    <button onclick="cad()">Cadastrar</button>
 
-    <script src="main.js"></script>
+    <script src="docs/JS/main.js"></script>
 </body>
 </html>

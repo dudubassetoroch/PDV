@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="docs/CSS/style.css">
 </head>
 <body>
-    <input type="text" placeholder="Usuario" id="user"><br>
-    <input type="password" placeholder="senha" id="key"><br>
-    <a href="cadastro.html">Não tem cadastro?</a><br>
-    <button onclick="login()">Entrar</button>
+<section class="login"> 
+    <div class="container">
+        <div class="card">
+            <h1>Login</h1>
+            <input type="text" placeholder="Usuario" id="user"><br>
+            <input type="password" placeholder="senha" id="key"><br>
+            <button class="ent-btn" onclick="login()">Entrar</button><br>
+            <div class="sem-cad">
+             <a class="n-cad" href="cadastro.html">Não tem cadastro?</a>
+             </div>
+        </div>
+    </div>
+</section>
+    
 
-    <script src="main.js"></script>
+    <script src="docs/JS/main.js"></script>
 </body>
 </html>

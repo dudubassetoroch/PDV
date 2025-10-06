@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    margin: 0;   
+     font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+
+.container{
+    margin-left: 40%;
+    margin-top: 10%;
+    
+}
+
+.card{
+    box-shadow: rgba(33, 123, 241, 0.35) 0px 5px 15px;
+    height: 45vh;
+    width: 35%;
+    border-radius: 18px;
+    background-color: rgb(31, 31, 31);
+}
+
+#user, #key, #keyCad, #userCad{
+    border: 0;
+    width: 60%;
+    height: 30px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 18px;
+    margin-left: 17%;
+}
+
+
+
+#user[type="text"], #key[type="password"], #userCad, #keyCad{
+    color: white;
+}
+
+body{
+    background-color:rgb(24, 24, 24);
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+.ent-btn{
+    background-color: rgb(33, 123, 241);
+    border: none;
+    color: white;
+    padding: 7px;
+    width: 200px;
+    border-radius: 18px;
+    margin-top: 25px;
+    margin-left: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+
+.ent-btn:hover{
+    background-color: transparent;
+    border: 2px solid white;
+
+}
+
+.n-cad{
+    color: rgb(33, 123, 241);
+
+}
+
+.sem-cad{
+    text-align: center;
+    margin-top: 25px;
+}
