@@ -11,9 +11,11 @@ function cad(){
 let usersalvo
 let keysalvo
 
+
 window.onload = function (){
     usersalvo = localStorage.getItem('userCad')
     keysalvo = localStorage.getItem('keyCad')
+    usuarioHome.innerText =  `${usersalvo}`
 }
 
 function login(){
@@ -29,3 +31,7 @@ function login(){
         alert("Usuário ou senha incorretos!")
     }
 }
+
+
+
+
