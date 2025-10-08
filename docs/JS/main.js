@@ -65,11 +65,64 @@ function cadastraprod() {
 
       produtos.forEach((p, i) => {
         lista.innerHTML += `
-          ${i + 1} - ${p.descricao} | R$${p.valor} | Qtd: ${p.saldo}
-          
+          ${i + 1} - ${p.descricao} | R$${p.valor} | Qtd: ${p.saldo}        
           <br>
         `;
       });
     }
 
     
+function fisica(){
+    let btnFisica = document.getElementById('btnFisica');
+    let clienteFisico = document.getElementById('clienteFisico');
+
+      btnFisica.onclick = () =>{
+      clienteFisico.style.display = "flex"
+      clientejuridico.style.display = "none"
+      }
+
+
+}
+
+function juridica(){
+    let btnJuridica = document.getElementById('btnJuridica');
+    let clientejuridico = document.getElementById('clientejuridico')
+
+    btnJuridica.onclick = () => {
+        clientejuridico.style.display = "flex"
+        clienteFisico.style.display = "none"
+    }
+}
+
+function cadastraFisica(){
+    let nomefisico = document.getElementById('nomefisico').value;
+    let cpf = document.getElementById('cpf').value;
+    let nascimento = document.getElementById('nascimento').value;
+    let cep = document.getElementById('cep').value;
+    let cidade = document.getElementById('cidade').value;
+    let logradouro = document.getElementById('logradouro').value;
+    let numeroCasa = document.getElementById('numeroCasa').value;
+    let bairro = document.getElementById('bairro').value;
+    let celular = document.getElementById('celular').value;
+
+    if(!nomefisico || !cpf || !nascimento || !cep || !cidade ||logradouro || !numeroCasa || !bairro || !celular){
+        alert('Preencha todos os campos')
+    }
+
+    let clientes = JSON.parse(localStorage.getItem(clientes)) || []
+    clientes.push({
+        nomefisico,cpf,nascimento, cep, cidade, logradouro, numeroCasa, bairro,celular
+    });
+
+    localStorage.setItem('clientes', JSON.stringify(clientes))
+
+    document.getElementById('nomefisico').value = ''
+    document.getElementById('cpf').value = ''
+    document.getElementById('nascimento').value = ''
+    document.getElementById('cep').value = ''
+    document.getElementById('cidade').value = ''
+    document.getElementById('logradouro').value = ''
+    document.getElementById('numeroCasa').value = ''
+    document.getElementById('bairro').value = ''
+    document.getElementById('celular').value = ''
+}
