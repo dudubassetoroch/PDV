@@ -1,0 +1,47 @@
+.title-pord{
+    color:rgb(33, 123, 241);
+    text-align: center;
+    margin: 30px;
+    font-size: 25px;
+
+}
+
+#descricao, #saldo, #valor{
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 18px;
+    height: 25px;
+    margin-left: 170px;
+    margin-top: 5px;
+}
+
+.nome-cad{
+    margin-left: 185px;
+    color:white;
+}
+
+#descricao[type="text"], #saldo, #valor{
+    color: white;
+}
+
+#btn-pro{
+    background-color:  rgb(33, 123, 241);
+    border: none;
+    width: 400px;
+    height: 25px;
+    font-size: 17px;
+    color: white;
+    border-radius: 18px;
+    margin-left: 400px;
+    margin-top: 55px;
+    cursor: pointer;
+    box-shadow: rgba(33, 123, 241, 0.35) 0px 5px 15px;
+}
+
+h3{
+    text-align: center;
+    font-size: 25px;
+    color:  rgb(33, 123, 241);
+    margin-top: 50px;
+}
+
