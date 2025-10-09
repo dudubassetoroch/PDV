@@ -1,5 +1,5 @@
 .title-pord{
-    color:rgb(33, 123, 241);
+    color:var(--roxo);
     text-align: center;
     margin: 30px;
     font-size: 25px;
@@ -25,7 +25,7 @@
 }
 
 #btn-pro{
-    background-color:  rgb(33, 123, 241);
+    background-color:  var(--roxo);
     border: none;
     width: 400px;
     height: 25px;
@@ -35,13 +35,14 @@
     margin-left: 400px;
     margin-top: 55px;
     cursor: pointer;
-    box-shadow: rgba(33, 123, 241, 0.35) 0px 5px 15px;
+    box-shadow: var(--box-shadow);
 }
 
 h3{
     text-align: center;
     font-size: 25px;
-    color:  rgb(33, 123, 241);
+    color:  var(--roxo);
     margin-top: 50px;
 }
+
 

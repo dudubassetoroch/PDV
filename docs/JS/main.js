@@ -17,7 +17,7 @@ window.onload = function (){
     usersalvo = localStorage.getItem('userCad');
     keysalvo = localStorage.getItem('keyCad');
     usuarioHome.innerText =  `${usersalvo}`;
-    mostrar()
+    mostrar();
 }
 
 // LOGIN
@@ -54,6 +54,7 @@ function cadastraprod() {
       document.getElementById('saldo').value = '';
 
       mostrar();
+      mostracliente();
     }
 
 
@@ -76,11 +77,11 @@ function fisica(){
     let btnFisica = document.getElementById('btnFisica');
     let clienteFisico = document.getElementById('clienteFisico');
 
-      btnFisica.onclick = () =>{
-      clienteFisico.style.display = "flex"
-      clientejuridico.style.display = "none"
-      }
-
+    btnFisica.onclick = () =>{
+        clienteFisico.style.display = "flex"
+        clientejuridico.style.display = "none"
+    }
+    mostracliente();
 
 }
 
@@ -92,37 +93,98 @@ function juridica(){
         clientejuridico.style.display = "flex"
         clienteFisico.style.display = "none"
     }
+    mostracliente();
 }
 
 function cadastraFisica(){
     let nomefisico = document.getElementById('nomefisico').value;
     let cpf = document.getElementById('cpf').value;
+    let rg = document.getElementById('rg').value
     let nascimento = document.getElementById('nascimento').value;
     let cep = document.getElementById('cep').value;
     let cidade = document.getElementById('cidade').value;
+    let complemento = document.getElementById('complemento').value
     let logradouro = document.getElementById('logradouro').value;
-    let numeroCasa = document.getElementById('numeroCasa').value;
+    let numerocasa = document.getElementById('numerocasa').value;
     let bairro = document.getElementById('bairro').value;
     let celular = document.getElementById('celular').value;
+    let email = document.getElementById('email').value;
 
-    if(!nomefisico || !cpf || !nascimento || !cep || !cidade ||logradouro || !numeroCasa || !bairro || !celular){
-        alert('Preencha todos os campos')
-    }
+    // if(!nomefisico || !cpf || !nascimento || !cep || !cidade ||logradouro || !numerocasa || !bairro || !celular || !rg || !complemento || !email){
+    //     alert('Preencha todos os campos') 
+    // }
+      
 
-    let clientes = JSON.parse(localStorage.getItem(clientes)) || []
+    let clientes = JSON.parse(localStorage.getItem('clientes')) || []
     clientes.push({
-        nomefisico,cpf,nascimento, cep, cidade, logradouro, numeroCasa, bairro,celular
+        nomefisico,cpf,nascimento, cep, cidade, logradouro, numerocasa, bairro,celular,rg,complemento,email
     });
 
-    localStorage.setItem('clientes', JSON.stringify(clientes))
+    localStorage.setItem('clientes', JSON.stringify(clientes));
 
-    document.getElementById('nomefisico').value = ''
-    document.getElementById('cpf').value = ''
-    document.getElementById('nascimento').value = ''
-    document.getElementById('cep').value = ''
-    document.getElementById('cidade').value = ''
-    document.getElementById('logradouro').value = ''
-    document.getElementById('numeroCasa').value = ''
-    document.getElementById('bairro').value = ''
-    document.getElementById('celular').value = ''
+    document.getElementById('nomefisico').value = "";
+    nomefisico = "";
+
+    document.getElementById('cpf').value = "";
+    cpf = "";
+
+    document.getElementById('rg').value = ""
+    rg = ""
+
+    document.getElementById('nascimento').value = "";
+    nascimento = "";
+
+    document.getElementById('cep').value = "";
+    cep = "";
+
+    document.getElementById('cidade').value = "";
+    cidade = "";
+
+    document.getElementById('complemento').value = "";
+    complemento = "";
+
+    document.getElementById('logradouro').value = "";
+    logradouro = "";
+
+    document.getElementById('numerocasa'). value = numerocasa;
+    numerocasa = "";
+
+    document.getElementById('bairro').value = "";
+    bairro = "";
+
+    document.getElementById('celular').value = "";
+    celular = "";
+
+    document.getElementById('email').value = ""
+    email = ""
+
+    mostracliente();
+}
+
+function mostracliente(){
+    let listacliente = document.getElementById('listacliente');
+    let clientes = JSON.parse(localStorage.getItem('clientes'))||[];
+
+    listacliente.innerHTML = "";
+
+    if(clientes.length > 0){
+        listacliente.style.display = "inline-block";
+    }
+    clientes.forEach((p, i) => {
+        listacliente.innerHTML += 
+          `
+        <div class = "itens-cliente">
+            ${i + 1} - ${p.nomefisico} | ${p.cpf} | ${p.rg} | ${p.nascimento} | ${p.cep} | ${p.cidade} 
+            | ${p.complemento} | ${p.logradouro} | ${p.numerocasa} | ${p.bairro} | ${p.celular} | ${p.email}       
+            <button onclick="removercliente(${i})">Remover</button><br>
+            <br>
+        </div>`;
+      });
+}
+
+function removercliente(index) {
+    let clientes = JSON.parse(localStorage.getItem('clientes')) || [];      
+    clientes.splice(index, 1);
+    localStorage.setItem('clientes', JSON.stringify(clientes));
+    mostracliente();
 }

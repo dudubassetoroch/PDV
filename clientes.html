@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="docs/CSS/home.css">
     <link rel="stylesheet" href="docs/CSS/cliente.css">
+    <link rel="stylesheet" href="docs/CSS/variaveis.css">
 </head>
 <body>
     <header class="home">
@@ -48,25 +49,29 @@
         
             <div id="clienteFisico" style="display: none;">
                 <div>
-                    <input type="text" id="nomefisico" placeholder="Nome">
+                    <input type="text" id="nomefisico" placeholder="Nome" style="width: 270px; margin-left: 50px;margin-top: 30px;">
                     <input type="number" id="cpf" placeholder="CPF">
-                    <input type="date" id="nascimento">
-                    <input type="number" id="cep" placeholder="CEP">
+                    <input type="number" id="rg" placeholder="RG">
+                    <input type="date" id="nascimento"><br>
+                    <input type="number" id="cep" placeholder="CEP" style="margin-left: 50px; margin-top: 10px;">
                     <input type="text" id="cidade" placeholder="Cidade">
-                    <input type="text" id="logradouro" placeholder="Logradouro">
-                    <input type="number" id="numeroCasa" placeholder="Numero da casa">
+                    <input type="text" id="complemento" placeholder="Complemento">
+                    <input type="text" id="logradouro" placeholder="Logradouro"><br>
+                    <input type="number" id="numerocasa" placeholder="Numero da casa" style="margin-left: 50px; margin-top: 10px;">
                     <input type="text" id="bairro" placeholder="Bairro">
                     <input type="number" id="celular" placeholder="Celular">
-                    <button onclick="cadastraFisica()">Cadastrar</button>
+                    <input type="text" id="email" placeholder="E-mail">
+                    <button onclick="cadastraFisica()" id="btn-cad">Cadastrar</button>
                 </div>
-                
             </div>
-
-             <div id="clientejuridico" style="display: none;">
+            
+            <div id="clientejuridico" style="display: none;">
                 <input type="text" id="nomefisico" placeholder="Nome">
                 <input type="number" id="cnpj" placeholder="CNPJ">
             </div>
-        
+            
+            <div id="listacliente" class="lista" style="display: none;"></div>
+         
         </section>
 
         <script src="docs/JS/main.js"></script>
