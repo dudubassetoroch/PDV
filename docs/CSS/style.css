@@ -14,8 +14,8 @@
 }
 
 .card{
-    box-shadow: rgba(98, 0, 255, 0.35) 0px 5px 15px;
-    height: 50vh;
+    box-shadow:var(--box-shadow);
+    height: 55vh;
     width: 35%;
     border-radius: 18px;
     background-color: rgb(31, 31, 31);
@@ -45,12 +45,13 @@ body{
 h1{
     color: white;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 32px;
 }
 
 .ent-btn{
-    background-color: var(--roxo);
-    border: none;
+    background-color:transparent;
+    border: 2px solid var(--roxo);
+    box-shadow: var(--box-shadow);
     color: white;
     padding: 7px;
     width: 200px;

@@ -18,7 +18,9 @@ window.onload = function (){
     keysalvo = localStorage.getItem('keyCad');
     usuarioHome.innerText =  `${usersalvo}`;
     mostrar();
+   
 }
+
 
 // LOGIN
 function login(){
@@ -54,7 +56,6 @@ function cadastraprod() {
       document.getElementById('saldo').value = '';
 
       mostrar();
-      mostracliente();
     }
 
 
@@ -109,15 +110,12 @@ function cadastraFisica(){
     let bairro = document.getElementById('bairro').value;
     let celular = document.getElementById('celular').value;
     let email = document.getElementById('email').value;
-
-    // if(!nomefisico || !cpf || !nascimento || !cep || !cidade ||logradouro || !numerocasa || !bairro || !celular || !rg || !complemento || !email){
-    //     alert('Preencha todos os campos') 
-    // }
+ 
       
 
     let clientes = JSON.parse(localStorage.getItem('clientes')) || []
     clientes.push({
-        nomefisico,cpf,nascimento, cep, cidade, logradouro, numerocasa, bairro,celular,rg,complemento,email
+        nomefisico,cpf,nascimento, cep, cidade, logradouro, numerocasa, bairro,celular,rg,complemento,email, cnpj, ie
     });
 
     localStorage.setItem('clientes', JSON.stringify(clientes));
@@ -146,7 +144,7 @@ function cadastraFisica(){
     document.getElementById('logradouro').value = "";
     logradouro = "";
 
-    document.getElementById('numerocasa'). value = numerocasa;
+    document.getElementById('numerocasa'). value = "";
     numerocasa = "";
 
     document.getElementById('bairro').value = "";
@@ -175,9 +173,8 @@ function mostracliente(){
           `
         <div class = "itens-cliente">
             ${i + 1} - ${p.nomefisico} | ${p.cpf} | ${p.rg} | ${p.nascimento} | ${p.cep} | ${p.cidade} 
-            | ${p.complemento} | ${p.logradouro} | ${p.numerocasa} | ${p.bairro} | ${p.celular} | ${p.email}       
-            <button onclick="removercliente(${i})">Remover</button><br>
-            <br>
+            | ${p.complemento} | ${p.logradouro} | ${p.numerocasa} | ${p.bairro} | ${p.celular} | ${p.email}     
+            <button id = "remover" onclick="removercliente(${i})">Remover</button><div class = "hrq"></div><br>
         </div>`;
       });
 }
@@ -187,4 +184,129 @@ function removercliente(index) {
     clientes.splice(index, 1);
     localStorage.setItem('clientes', JSON.stringify(clientes));
     mostracliente();
+}
+
+// function cadastraJuridica(){
+//     let razao = document.getElementById('razao').value;
+//     let fantasia = document.getElementById('fantasia').value;
+//     let cnpj = document.getElementById('cnpj').value;
+//     let ie = document.getElementById('ie').value;
+//     let cepe = document.getElementById('cepe').value;
+//     let cidadee = document.getElementById('cidadee').value;
+//     let complementoe = document.getElementById('complementoe').value;
+//     let logradouroe = document.getElementById('logradouroe').value;
+//     let numerocasae = document.getElementById('numerocasae').value;
+//     let bairroe = document.getElementById('bairroe').value;
+//     let celulare = document.getElementById('celulare').value;
+//     let emaile = document.getElementById('emaile').value;
+
+//     let clientes = JSON.parse(localStorage.getItem('clientes')) || []
+//     clientes.push({razao, fantasia, cnpj, ie, cepe, cidadee, complementoe, logradouroe, numerocasae, bairroe, celulare, emaile});
+    
+//     localStorage.setItem('clientes', JSON.stringify(clientes));
+
+//     document.getElementById('razao').value = "";
+//     razao = "";
+    
+//     document.getElementById('fantasia').value = "";
+//     fantasia = "";
+
+//     document.getElementById('cnpj').value = "";
+//     cnpj = "";
+
+//     document.getElementById('ie').value = "";
+//     ie = "";
+
+//     document.getElementById('cepe').value = "";
+//     cepe = "";
+
+//     document.getElementById('cidadee').value = "";
+//     cidadee = "";
+
+//     document.getElementById('complementoe').value = "";
+//     complementoe = "";
+
+//     document.getElementById('numerocasae').value = "";
+//     numerocasae = "";
+
+//     document.getElementById('bairroe').value = "";
+//     bairroe = "";
+
+//     document.getElementById('celulare').value = "";
+//     celulare = "";
+
+//     document.getElementById('emaile').value = "";
+//     emaile = "";
+
+//     mostracliente();
+// }
+
+// function mostracliente(){
+//     let lista = document.getElementById('listacliente');
+//     let clientes = JSON.parse(localStorage.getItem('clientes')) || [];
+
+//     if(clientes.length > 0){
+//         listacliente.style.display = "inline-block";
+//     }
+
+//     lista.innerHTML = ""
+
+//     .forEach((p, i) => {
+//          listacliente.innerHTML += 
+//           `
+//         <div class = "itens-cliente">
+//             ${i + 1} - ${p.razao} | ${p.fantasia} | ${p.cnpj} | ${p.ie} | ${p.cepe} | ${p.cidadee} 
+//             | ${p.complementoe} | ${p.logradouroe} | ${p.numerocasae} | ${p.bairroe} | ${p.celulare} | ${p.emaile}     
+//             <button id = "remover" onclick="removercliente(${i})">Remover</button><div class = "hrq"></div><br>
+//         </div>`;
+//       });
+//     }
+
+//     function removercliente(index) {
+//     let clientes = JSON.parse(localStorage.getItem('clientes')) || [];      
+//     clientes.splice(index, 1);
+//     localStorage.setItem('clientes', JSON.stringify(clientes));
+//     mostracliente();
+// }
+
+function cadempresa(){
+    let compEmp = document.getElementById('compEmp').value
+    let bairroEmp = document.getElementById('bairroEmp').value
+    let numeroEmp = document.getElementById('numeroEmp').value
+    let endEmp = document.getElementById('endEmp').value
+    let ufEmp = document.getElementById('ufEmp').value
+    let cidadeEmp = document.getElementById('cidadeEmp').value
+    let cepEmp = document.getElementById('cepEmp').value
+    let ieEmp = document.getElementById('ieEmp').value
+    let cnpjEmp = document.getElementById('cnpjEmp').value
+    let fantasiaEmp = document.getElementById('fantasiaEmp').value
+    let responsavelEmp = document.getElementById('responsavelEmp').value
+    let codEmp = document.getElementById('codEmp').value
+ 
+    localStorage.setItem('compEmp', compEmp)
+
+    
+}
+
+window.addEventListener('load', function () {
+  let compEmpSalvo = localStorage.getItem('compEmp')
+
+    if(compEmpSalvo){
+        document.getElementById('compEmpC').innerHTML = compEmpSalvo
+    }
+
+});
+
+function apenasteste(){
+    let abrir = document.getElementById('testebotao')
+    let modalemp = document.getElementById('modalemp')
+    let fechar = document.getElementById('fechar')
+
+    abrir.onclick = () => {
+        modalemp.style.display = "flex"
+    }
+
+    fechar.onclick = () => {
+        modalemp.style.display = "none"
+    }
 }

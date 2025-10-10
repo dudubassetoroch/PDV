@@ -1,0 +1,160 @@
+#codEmp{
+    width: 80px;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 18px;
+    height: 25px;
+}
+
+#codEmpC{
+     width: 80px;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 18px;
+    height: 25px;
+    width: 150px;
+}
+
+#razaoEmpC{
+    border: 2px solid white;
+    background-color: transparent;
+    height: 25px;
+    border-radius: 18px;
+    width: 150px;
+}
+
+#razaoEmp{
+    width: 800px;
+    border: 2px solid white;
+    background-color: transparent;
+    height: 25px;
+    border-radius: 18px;
+}
+
+#responsavelEmpC, #fantasiaEmpC, #cnpjEmpC, #ieEmpC, #bairroEmpC, #compEmpC{
+    border: 2px solid white;
+    background-color: transparent;
+    height: 25px;
+    border-radius: 18px;
+    width: 150px;
+}
+
+input{
+    margin: 5px;
+    padding-left: 8px;
+    color: #ccc;
+}
+
+#responsavelEmp, #fantasiaEmp, #cnpjEmp, #ieEmp, #bairroEmp, #compEmp{
+    width: 440px;
+    border: 2px solid white;
+    background-color: transparent;
+    height: 25px;
+    border-radius: 18px;
+}
+
+#cepEmp, #ufEmp{
+    width: 100px;
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+}
+
+#cepEmpC, #ufEmpC{
+    width: 150px;
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+}
+
+#cidadeEmp{
+    width: 645px;
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+}
+
+#cidadeEmpC{
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+    width: 150px;
+}
+
+#endEmp{
+    width: 775px;
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+}
+
+#endEmpC{
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+    width: 150px;
+}
+
+#numeroEmp{
+    width: 100px;
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+}
+
+#numeroEmpC{
+    border-radius: 18px;
+    border: 2px solid white;
+    height: 25px;
+    background-color: transparent;
+    width: 150px;
+}
+
+h1{
+    text-align: center;
+    color: var(--roxo);
+    margin: 15px;
+}
+
+#btnempresa{
+    width: 920px;
+    border-radius: 18px;
+    margin-left: 8px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid var(--roxo);
+    cursor: pointer;
+    height: 35px;
+    color: white;
+    font-size: 17px;
+    box-shadow: var(--box-shadow);
+}
+
+#modalemp{
+      display: none; 
+      position: fixed;
+      z-index: 1;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(161, 160, 160, 0.5);
+      justify-content: center;
+      align-items: center;
+}
+
+  .modal-content {
+       background: var(--card);
+      padding: 20px;
+      border-radius: 10px;
+      width: 600px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border: 0.1px solid var(--roxo);
+      box-shadow: var(--box-shadow);
+    }

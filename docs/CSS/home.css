@@ -20,7 +20,8 @@ body{
 }
 
 .logo{
-    width: 100px;
+    width: 80px;
+    height: 80px;
     margin-left: 25px;
 }
 
@@ -85,7 +86,7 @@ a:hover{
 
 .produto-svg{
     fill: var(--roxo);
-    width: 70px;
+    width: 50px;
     margin-top: 10px;
 
 }

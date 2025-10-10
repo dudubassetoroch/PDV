@@ -39,6 +39,12 @@
         <p class="nom-campos">Clientes</p>
         <div class="hr"></div>
       </div></a>
+
+      <a href="empresa.html"><div>
+        <svg class="produto-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M192 64C156.7 64 128 92.7 128 128L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 128C512 92.7 483.3 64 448 64L192 64zM304 416L336 416C353.7 416 368 430.3 368 448L368 528L272 528L272 448C272 430.3 286.3 416 304 416zM224 176C224 167.2 231.2 160 240 160L272 160C280.8 160 288 167.2 288 176L288 208C288 216.8 280.8 224 272 224L240 224C231.2 224 224 216.8 224 208L224 176zM368 160L400 160C408.8 160 416 167.2 416 176L416 208C416 216.8 408.8 224 400 224L368 224C359.2 224 352 216.8 352 208L352 176C352 167.2 359.2 160 368 160zM224 304C224 295.2 231.2 288 240 288L272 288C280.8 288 288 295.2 288 304L288 336C288 344.8 280.8 352 272 352L240 352C231.2 352 224 344.8 224 336L224 304zM368 288L400 288C408.8 288 416 295.2 416 304L416 336C416 344.8 408.8 352 400 352L368 352C359.2 352 352 344.8 352 336L352 304C352 295.2 359.2 288 368 288z"/></svg>
+        <p class="nom-campos">Empresa</p>
+        <div class="hr"></div>
+      </div></a>
         </div>
 
         <section class="cadastro-cliente">
@@ -66,11 +72,27 @@
             </div>
             
             <div id="clientejuridico" style="display: none;">
-                <input type="text" id="nomefisico" placeholder="Nome">
-                <input type="number" id="cnpj" placeholder="CNPJ">
+                <div>
+                    <input type="text" id="razao" placeholder="Razão Social" style="width: 270px; margin-left: 50px;margin-top: 30px;">
+                    <input type="text" id="fantasia" placeholder="Fantasia">
+                    <input type="number" id="cnpj" placeholder="CNPJ">
+                    <input type="number" id="ie" placeholder="IE">
+                    <br>
+                    <input type="number" id="cepe" placeholder="CEP" style="margin-left: 50px; margin-top: 10px;">
+                    <input type="text" id="cidadee" placeholder="Cidade">
+                    <input type="text" id="complementoe" placeholder="Complemento">
+                    <input type="text" id="logradouroe" placeholder="Logradouro"><br>
+                    
+                    <input type="number" id="numerocasae" placeholder="Numero da casa" style="margin-left: 50px; margin-top: 10px;">
+                    <input type="text" id="bairroe" placeholder="Bairro">
+                    <input type="number" id="celulare" placeholder="Celular">
+                    <input type="text" id="emaile" placeholder="E-mail">
+                    <button onclick="cadastraJuridica()" id="btn-cad">Cadastrar</button>
+                </div>
             </div>
             
             <div id="listacliente" class="lista" style="display: none;"></div>
+            <div id="listaempresas" class="lista" style="display: none;"></div>
          
         </section>
 
