@@ -46,3 +46,22 @@ h3{
 }
 
 
+
+#lista{
+    background-color:var(--card);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 1.5%;
+    box-shadow:var(--box-shadow);
+    color: white;
+}
+
+.hr-produto{
+      background-color: var(--roxo);
+    height: 2px;
+    width: 100%;
+    margin-top: 6px;
+    box-shadow: var(--box-shadow);
+}

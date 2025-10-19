@@ -1,0 +1,36 @@
+#listavendedor{
+background-color:var(--card);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 1.5%;
+    box-shadow:var(--box-shadow);    
+    color: #ccc;
+}
+
+h1{
+    margin-left: 470px;
+     color: var(--roxo);
+    margin-top: 50px; 
+}
+
+#vendedor{
+    width: 200px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 18px;
+    height: 30px;
+    color: #ccc;
+    margin: 20px;
+}
+
+#btn-cadvendedor{
+    width: 200px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid var(--roxo);
+    box-shadow: var(--box-shadow);
+    border-radius: 18px;
+    color: white;
+}

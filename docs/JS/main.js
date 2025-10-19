@@ -18,7 +18,11 @@ window.onload = function (){
     keysalvo = localStorage.getItem('keyCad');
     usuarioHome.innerText =  `${usersalvo}`;
     mostrar();
-   
+    mostravendedor()
+
+    let razaoEmpSalvo = localStorage.getItem('razaoEmp');
+    nomeemps.innerText = `${razaoEmpSalvo}`;
+    
 }
 
 
@@ -65,9 +69,14 @@ function cadastraprod() {
 
       lista.innerHTML = '';
 
+      if(produtos.length > 0){
+        lista.style.display = "inline-block";
+    }
+
       produtos.forEach((p, i) => {
         lista.innerHTML += `
-          ${i + 1} - ${p.descricao} | R$${p.valor} | Qtd: ${p.saldo}        
+          ${i + 1} - ${p.descricao} | R$${p.valor} | Qtd: ${p.saldo}  <div class = 
+          "hr-produto"></div>      
           <br>
         `;
       });
@@ -270,30 +279,63 @@ function removercliente(index) {
 // }
 
 function cadempresa(){
-    let compEmp = document.getElementById('compEmp').value
-    let bairroEmp = document.getElementById('bairroEmp').value
-    let numeroEmp = document.getElementById('numeroEmp').value
-    let endEmp = document.getElementById('endEmp').value
-    let ufEmp = document.getElementById('ufEmp').value
-    let cidadeEmp = document.getElementById('cidadeEmp').value
-    let cepEmp = document.getElementById('cepEmp').value
-    let ieEmp = document.getElementById('ieEmp').value
-    let cnpjEmp = document.getElementById('cnpjEmp').value
-    let fantasiaEmp = document.getElementById('fantasiaEmp').value
-    let responsavelEmp = document.getElementById('responsavelEmp').value
-    let codEmp = document.getElementById('codEmp').value
+    let compEmp = document.getElementById('compEmp').value;
+    let bairroEmp = document.getElementById('bairroEmp').value;
+    let numeroEmp = document.getElementById('numeroEmp').value;
+    let endEmp = document.getElementById('endEmp').value;
+    let ufEmp = document.getElementById('ufEmp').value;
+    let cidadeEmp = document.getElementById('cidadeEmp').value;
+    let cepEmp = document.getElementById('cepEmp').value;
+    let ieEmp = document.getElementById('ieEmp').value;
+    let cnpjEmp = document.getElementById('cnpjEmp').value;
+    let fantasiaEmp = document.getElementById('fantasiaEmp').value;
+    let responsavelEmp = document.getElementById('responsavelEmp').value;
+    let codEmp = document.getElementById('codEmp').value;
+    let razaoEmp = document.getElementById('razaoEmp').value;
  
-    localStorage.setItem('compEmp', compEmp)
-
-    
+    localStorage.setItem('compEmp', compEmp);
+    localStorage.setItem('bairroEmp', bairroEmp);
+    localStorage.setItem('numeroEmp', numeroEmp);
+    localStorage.setItem('endEmp', endEmp);
+    localStorage.setItem('ufEmp', ufEmp);
+    localStorage.setItem('cidadeEmp', cidadeEmp);
+    localStorage.setItem('cepEmp', cepEmp);
+    localStorage.setItem('ieEmp', ieEmp);
+    localStorage.setItem('cnpjEmp', cnpjEmp);
+    localStorage.setItem('fantasiaEmp', fantasiaEmp);
+    localStorage.setItem('responsavelEmp', responsavelEmp);
+    localStorage.setItem('codEmp', codEmp);
+    localStorage.setItem('razaoEmp', razaoEmp);
 }
 
 window.addEventListener('load', function () {
-  let compEmpSalvo = localStorage.getItem('compEmp')
+  let compEmpSalvo = localStorage.getItem('compEmp');
+  let bairroEmpSalvo = localStorage.getItem('bairroEmp');
+  let numeroEmpSalvo = localStorage.getItem('numeroEmp');
+  let endEmpSalvo = localStorage.getItem('endEmp');
+  let ufEmpSalvo = localStorage.getItem('ufEmp');
+  let cidadeEmpSalvo = localStorage.getItem('cidadeEmp');
+  let ieEmpSalvo = localStorage.getItem('ieEmp');
+  let cnpjEmpSalvo = localStorage.getItem('cnpjEmp');
+  let fantasiaEmpSalvo = localStorage.getItem('fantasiaEmp');
+  let codEmpSalvo = localStorage.getItem('codEmp');
+  let razaoEmpSalvo = localStorage.getItem('razaoEmp');
 
-    if(compEmpSalvo){
-        document.getElementById('compEmpC').innerHTML = compEmpSalvo
+    if(compEmpSalvo && bairroEmpSalvo && numeroEmpSalvo && endEmpSalvo && ufEmpSalvo && cidadeEmpSalvo && ieEmpSalvo && cnpjEmpSalvo && fantasiaEmpSalvo && codEmpSalvo && razaoEmpSalvo){
+        document.getElementById('compEmpC').innerHTML = compEmpSalvo;
+        document.getElementById('bairroEmpC').innerHTML = bairroEmpSalvo;
+        document.getElementById('numeroEmpC').innerHTML = numeroEmpSalvo;
+        document.getElementById('endEmpC').innerHTML = endEmpSalvo;
+        document.getElementById('ufEmpC').innerHTML = ufEmpSalvo;
+        document.getElementById('cidadeEmpC').innerHTML = cidadeEmpSalvo;
+        document.getElementById('ieEmpC').innerHTML = ieEmpSalvo;
+        document.getElementById('cnpjEmpC').innerHTML = cnpjEmpSalvo;
+        document.getElementById('fantasiaEmpC').innerHTML  = fantasiaEmpSalvo;
+        document.getElementById('codEmpC').innerHTML = codEmpSalvo;
+        document.getElementById('razaoEmpC').innerHTML = razaoEmpSalvo;
     }
+
+
 
 });
 
@@ -310,3 +352,101 @@ function apenasteste(){
         modalemp.style.display = "none"
     }
 }
+
+function cadastrovendedor() {
+  let vendedor = document.getElementById('vendedor').value
+  
+  let vendedores = JSON.parse(localStorage.getItem('vendedor')) || []
+  vendedores.push({ vendedor })
+
+  localStorage.setItem('vendedor', JSON.stringify(vendedores))
+
+  document.getElementById('vendedor').value = ""
+
+  mostravendedor()
+}
+
+function mostravendedor() {
+  let listavendedor = document.getElementById('listavendedor');
+  let vendedores = JSON.parse(localStorage.getItem('vendedor')) || [];
+
+  listavendedor.innerHTML = "";
+
+  vendedores.forEach((p, i) => {
+    console.log("Adicionando vendedor:", p.vendedor);
+    listavendedor.innerHTML += `
+      <div class="itens-cliente">
+        ${i + 1} - ${p.vendedor}
+        <button onclick="removervendedor(${i})">Remover</button>
+      </div>`;
+  });
+
+  
+}
+
+function removervendedor(index) {
+    let vendedores = JSON.parse(localStorage.getItem('vendedor')) || [];      
+    vendedores.splice(index, 1);
+    localStorage.setItem('vendedor', JSON.stringify(vendedores));
+    mostravendedor();
+}
+
+
+function abrevendedor() {
+ 
+  let vendedores = JSON.parse(localStorage.getItem('vendedor')) || [];
+  let div = document.getElementById('listaVendedores');
+
+  
+  div.innerHTML = vendedores.map((p, i) => `
+    <button onclick="selecionarVendedor(${i})" id = "selvendedor">
+      ${p.vendedor}
+    </button>
+  `).join('');
+
+  
+  div.style.display = "block";
+}
+
+function selecionarVendedor(index) {
+  let vendedores = JSON.parse(localStorage.getItem('vendedor')) || [];
+  let vendedorSelecionado = vendedores[index].vendedor;
+
+  
+  document.getElementById('recebevendedor').innerText = vendedorSelecionado;
+
+
+  document.getElementById('listaVendedores').style.display = "none";
+
+ 
+  localStorage.setItem('vendedorSelecionado', vendedorSelecionado);
+}
+
+function modalvendedor(){
+  let abrir = document.getElementById('abrirvendedor')
+  let modal = document.getElementById('containermodalvendedor')
+  let fechar = document.getElementById('fechar_vendedor')
+
+  abrir.onclick = () => {
+        modal.style.display = "flex"
+    }
+
+    fechar.onclick = () => {
+        modal.style.display = "none"
+    }
+
+  }
+
+function modalcliente(){
+   let abrir = document.getElementById('abrirmodalcliente')
+   let modal = document.getElementById('containerrmodalcliente')
+   let fechar = document.getElementById('fecharcliente')
+
+   abrir.onclick = () => {
+    modal.style.display = "flex"
+   }
+
+   fechar.onclick = () => {
+    modal.style.display = "none"
+   }
+  }

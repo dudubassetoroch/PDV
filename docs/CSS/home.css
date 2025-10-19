@@ -65,6 +65,11 @@ a:hover{
     margin-left: 50%;
 }
 
+.nome-emp-nav{
+    color: var(--roxo);
+    margin-top: 20px;
+}
+
 .svg-sair{
     fill: white;
     width: 25px;
