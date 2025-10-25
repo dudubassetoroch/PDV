@@ -64,6 +64,11 @@
                 <p onclick="modalcliente()" id="abrirmodalcliente" style="cursor: pointer;">Cliente:</p>
                 <p id="recebeclinente"></p>
             </div>
+
+            <div style="display: flex;">
+                <p onclick="modalproduto()" id="abrirmodalproduto" style="cursor: pointer;">Produto:</p>
+              
+            </div>
             
             <div id="containerrmodalcliente" style="display: none;">
                 <div id="conteudomodalcliente">
@@ -71,12 +76,45 @@
                         <h1>Selecione o cliente!</h1>
                         <p id="fecharcliente">X</p>
                     </div>
+                   <button onclick="abrecliente()" id="filtraCliente">Filtrar</button>
+                   <div class="hr_top"></div>
+                   <div id="listaCliente"></div>
                 </div>
             </div>
-        
+
+            <div id="containermodalproduto" style="display: none;">
+                <div id="conteudomodalproduto">
+                    <div style="display: flex;">
+                        <h1>Selecione o Produto!</h1>
+                        <p id="fecharproduto">X</p>
+                    </div>
+                    <button onclick="abreproduto()">Filtrar</button>
+                    <div id="listaproduto"></div>
+                </div>
+            </div>
+
+        <div>
+            <button class="btn-consorcio">Consorcio</button>
+            <button class="btn-condicional">Condicional</button><br>
+            <button class="btn-cancelar">Cancelar</button>
+            <button class="btn-finalizar">Finalizar</button>
+       </div>
        </div>
 
-        <div class="bloco2"></div>
+       
+
+        <div class="bloco2">
+            <div class="container-bloco2">
+                <div class="tabela">
+                    <div class="itens-tabela">
+                          <p id="recebeproduto"></p>
+                    </div>
+                     <div class="itens-tabela">
+                        <p id="recebequantidadeproduto"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </section>
 

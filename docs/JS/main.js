@@ -437,16 +437,87 @@ function modalvendedor(){
 
   }
 
-function modalcliente(){
-   let abrir = document.getElementById('abrirmodalcliente')
-   let modal = document.getElementById('containerrmodalcliente')
-   let fechar = document.getElementById('fecharcliente')
 
-   abrir.onclick = () => {
-    modal.style.display = "flex"
-   }
+  function modalcliente(){
+    let abrir = document.getElementById('abrirmodalcliente')
+    let modal = document.getElementById('containerrmodalcliente')
+    let fechar = document.getElementById('fecharcliente')
 
-   fechar.onclick = () => {
-    modal.style.display = "none"
-   }
+    abrir.onclick = () => {
+      modal.style.display = "flex"
+    }
+
+    fechar.onclick = () => {
+      modal.style.display = "none"
+    }
   }
+
+  function abrecliente(){
+    let cliente = JSON.parse(localStorage.getItem('clientes')) || []
+    let div = document.getElementById('listaCliente')
+
+    div.innerHTML = cliente.map((p, i) => `
+    <button onclick="selecionarCliente(${i})" id = "selcliente">
+    
+      ${p.nomefisico}
+    </button>
+    <div class = "hrcliente"></div>
+  `).join('');
+
+  div.style.display = "block";
+  }
+
+  function selecionarCliente(index){
+     let cliente = JSON.parse(localStorage.getItem('clientes')) || []
+     let clienteSelecionado = cliente[index].nomefisico
+
+     document.getElementById('recebeclinente').innerText = clienteSelecionado
+
+     document.getElementById('listaCliente').style.display = "none"
+
+     localStorage.setItem('clienteSelecionado', clienteSelecionado)
+  }
+
+  function modalproduto(){
+    let abrir = document.getElementById('abrirmodalproduto')
+    let modal = document.getElementById('containermodalproduto')
+    let fechar = document.getElementById('fecharproduto')
+
+    abrir.onclick = () => {
+      modal.style.display = "flex"
+    }
+
+    fechar.onclick = () => {
+      modal.style.display = "none"
+    }
+  }
+
+ function abreproduto(){
+  let produtos = JSON.parse(localStorage.getItem('produtos'))|| []
+  let div = document.getElementById('listaproduto')
+  
+
+  div.innerHTML = produtos.map((p, i) => `
+    <p onclick="selecionarProduto(${i})" class="selproduto"> 
+     ${p.descricao} - R$ ${p.valor}
+    </p>
+    <input type="number" id="quantidadevenda">
+    <div class = "hrcliente"></div>
+  `).join('');
+
+  
+ }
+
+ function selecionarProduto(index){
+  let produtos = JSON.parse(localStorage.getItem('produtos')) || []
+  let produtoSelecionado = produtos[index].descricao
+  let quantidadevenda = document.getElementById('quantidadevenda')
+
+     document.getElementById('recebeproduto').innerText = produtoSelecionado
+
+     document.getElementById('listaproduto').style.display = "none"
+
+     localStorage.setItem('produtoSelecionado', produtoSelecionado)
+
+     
+ }
