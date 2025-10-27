@@ -88,7 +88,7 @@
                         <h1>Selecione o Produto!</h1>
                         <p id="fecharproduto">X</p>
                     </div>
-                    <button onclick="abreproduto()">Filtrar</button>
+                    <button id="filtraproduto" onclick="abreproduto()">Filtrar</button>
                     <div id="listaproduto"></div>
                 </div>
             </div>
@@ -96,8 +96,8 @@
         <div>
             <button class="btn-consorcio">Consorcio</button>
             <button class="btn-condicional">Condicional</button><br>
-            <button class="btn-cancelar">Cancelar</button>
-            <button class="btn-finalizar">Finalizar</button>
+            <a href="homevenda.html"><button class="btn-cancelar">Cancelar</button></a>
+            <button class="btn-finalizar" onclick="finalizar()">Finalizar</button>
        </div>
        </div>
 
@@ -105,15 +105,31 @@
 
         <div class="bloco2">
             <div class="container-bloco2">
-                <div class="tabela">
-                    <div class="itens-tabela">
-                          <p id="recebeproduto"></p>
+                <h1 style="text-align: center;">Produtos da Venda</h1>
+                <div class="tabela" style="display: flex;">
+                    <div style="display: flex; margin-left: 60px;" class="itens-tabela">
+                          <p id="recebeproduto"></p>                          
+                    </div>
+                     <div style="display: flex;" class="itens-tabela">
+                          <p id="recebevalor"></p>
                     </div>
                      <div class="itens-tabela">
                         <p id="recebequantidadeproduto"></p>
                     </div>
                 </div>
             </div>
+
+            <div style="margin-top: 340px; text-align: center;">
+                
+                <h2 style="color: #ccc;">Total venda</h2>
+                <div style="width: 90%; height: 2px; background-color: #ccc; margin-left: 5%;"></div>
+                    <div style="display: flex; margin-left: 12%;margin-top: 25px;">
+                        <div id="itensvenda">0 ITENS</div>
+                        <p id="totalvenda">TOTAL</p>
+                    </div>
+                
+            </div>
+            
         </div>
         
     </section>

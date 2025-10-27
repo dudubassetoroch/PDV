@@ -1,0 +1,29 @@
+.bloco1{
+    width: 500px;
+    height: 83vh;
+    background-color:var(--card);
+    margin: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.bloco2{
+    width: 650px;
+    height: 83vh;
+    background-color:var(--card);
+    margin-top: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+#vendedorrecebimento, #clienterecebimento{
+    text-transform: uppercase;
+    color: #ccc;
+    margin: 18px;
+}
+
+.valorRecebido{
+    background-color: #ccc;
+    width: 231px;
+    margin-left: 13px;
+    margin-top: 60px;
+    height: 35px;
+}

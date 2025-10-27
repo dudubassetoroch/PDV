@@ -10,6 +10,10 @@ body{
      background-color:var(--background);
 }
 
+html, body {
+  overflow: hidden;
+}
+
 .home{
     color: white;
      box-shadow: var(--box-shadow);

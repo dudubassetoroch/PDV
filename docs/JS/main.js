@@ -23,6 +23,7 @@ window.onload = function (){
     let razaoEmpSalvo = localStorage.getItem('razaoEmp');
     nomeemps.innerText = `${razaoEmpSalvo}`;
     
+    
 }
 
 
@@ -498,26 +499,70 @@ function modalvendedor(){
   
 
   div.innerHTML = produtos.map((p, i) => `
-    <p onclick="selecionarProduto(${i})" class="selproduto"> 
-     ${p.descricao} - R$ ${p.valor}
-    </p>
-    <input type="number" id="quantidadevenda">
-    <div class = "hrcliente"></div>
+    <div id = "navproduto">
+    
+      <p class = "prod">${p.descricao} - R$ ${p.valor}</p>
+      
+      <input type="number" id="quantidadevenda">
+        <button onclick="selecionarProduto(${i})" class="selproduto">Selecionar</button> 
+    </div>
+      <div class = "hrcliente"></div>
+    
   `).join('');
 
-  
+  localStorage.getItem('quantidadevenda',quantidadevenda)
  }
 
  function selecionarProduto(index){
   let produtos = JSON.parse(localStorage.getItem('produtos')) || []
   let produtoSelecionado = produtos[index].descricao
-  let quantidadevenda = document.getElementById('quantidadevenda')
+  let valorproduto = produtos[index].valor
+  let saldoproduto = document.getElementById('quantidadevenda').value
 
      document.getElementById('recebeproduto').innerText = produtoSelecionado
-
-     document.getElementById('listaproduto').style.display = "none"
-
+     document.getElementById('recebevalor').innerText = `R$ ${valorproduto}`
+     document.getElementById('recebequantidadeproduto').innerHTML = saldoproduto
+  
      localStorage.setItem('produtoSelecionado', produtoSelecionado)
+     localStorage.setItem('valorproduto', valorproduto)
+     localStorage.getItem('quantidadevenda',quantidadevenda)
 
-     
+   let totalvenda = document.getElementById('totalvenda').value
+   totalvenda = valorproduto * saldoproduto
+
+   let itensvenda = document.getElementById('itensvenda').value
+   itensvenda = saldoproduto
+
+   document.getElementById('totalvenda').innerText = `TOTAL DE R$ ${totalvenda}`
+   document.getElementById('itensvenda').innerText = `${itensvenda} ITENS`
+
+   localStorage.setItem('totalvenda', totalvenda)
  }
+
+ function finalizar(){
+  window.location.href = "recebimentovenda.html"
+ }
+
+ window.addEventListener('load', function() {
+  let vendedorSalvo = localStorage.getItem('vendedorSelecionado');
+  if (vendedorSalvo) {
+    let campo = document.getElementById('vendedorrecebimento');
+    campo.innerText = `Vendedor: ${vendedorSalvo}`;
+  }
+
+  let clienteSalvo = localStorage.getItem('clienteSelecionado')
+  if (clienteSalvo) {
+    let clSalvo = document.getElementById('clienterecebimento')
+    clSalvo.innerText = `Cliente: ${clienteSalvo}`
+  }
+
+  let valorSalvo = localStorage.getItem('totalvenda')
+  if (valorSalvo){
+    let subtotal = document.getElementById('subtotal')
+    subtotal.innerText = `Sub Total: ${valorSalvo},00`
+  }
+
+});
+
+
+
