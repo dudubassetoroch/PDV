@@ -560,9 +560,56 @@ function modalvendedor(){
   if (valorSalvo){
     let subtotal = document.getElementById('subtotal')
     subtotal.innerText = `Sub Total: ${valorSalvo},00`
+    recebeValorP.innerText = `Valor a prazo: R$ ${valorSalvo}`
+    recebeValorV.innerText = `Valor a prazo: R$ ${valorSalvo}`
   }
 
 });
 
+function calculadesc(){
+ let valorSalvo = Number(localStorage.getItem('totalvenda'))
+ let percentual = Number(document.getElementById('percentual').value)
+ let decimal = Number(document.getElementById('decimal').value)
+ let valorfinal = valorSalvo
+  if(percentual){
+    valorfinal = valorSalvo - (valorSalvo * percentual / 100)
+  }else if(decimal){
+    valorfinal = valorSalvo - decimal
+  }
 
+ 
+document.getElementById('valorFinalVenda').innerText =  `Valor a receber R$ ${valorfinal}`
+
+localStorage.setItem('valorfinal', valorfinal)
+}
+
+function finalizarvenda(){
+  let valorRecebido = document.getElementById('valorRecebido').value;
+  let valorFinalSalvo = Number(localStorage.getItem('valorfinal'));
+  let formas = document.querySelectorAll('.formaPagamentoValor');
+
+  let totalPago = 0;
+  formas.forEach(input => {
+    totalPago += Number(input.value) || 0;
+  });
+
+  if (totalPago === valorFinalSalvo) {
+    recebevenda.onclick = () => {
+      modal.style.display = "flex"
+    }
+     
+
+  } else if (valorRecebido === "" || valorRecebido === null) {
+    alert("Receba a venda!");
+  } else {
+    alert("Valor diferente!");
+  }
+
+  let modal = document.getElementById('modalPedido')
+  let fechar = document.getElementById('fecharPedido')
+   fechar.onclick = () =>{
+        modal.style.display = "none"
+      }
+
+}
 

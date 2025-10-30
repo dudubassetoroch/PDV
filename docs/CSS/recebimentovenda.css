@@ -23,7 +23,97 @@
 .valorRecebido{
     background-color: #ccc;
     width: 231px;
-    margin-left: 13px;
-    margin-top: 60px;
-    height: 35px;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 25px;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+#recebeValorP, #recebeValorV{
+    margin-top: 7px;
+    background-color: white;
+    height: 25px;
+    width: 88.5%;
+    text-align: right;
+    border: 2px solid black;
+    background-color: #ccc;
+}
+
+.desconto{
+    text-align: center;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.campos_desc{
+    margin: 20px;
+}
+.container-desc{
+    display: flex;
+    margin-left: 30px;
+}
+
+.number_desc{
+    color: #ccc;
+    font-size: 16px;
+}
+
+#valorFinalVenda{
+    color: #ccc;
+    margin-top: 15px;
+}
+
+.cont-btn{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cont-btn button{
+    width: 200px;
+    cursor: pointer;
+    border-radius: 18px;
+    border: none;
+    height: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+#calcula_desconto{
+    width: 150px;
+    height: 25px;
+    border-radius: 18px;
+    border: none;
+    background-color: var(--background);
+    box-shadow: var(--box-shadow-branco);
+    color: white;
+}
+
+h2{
+    text-align: center;
+    margin-top: 15px;
+    color: #ccc;
+}
+
+.metodos_vista{
+    background-color: #ccc;
+    margin-top: 25px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.formas_pagamento{
+    background-color: #ccc;
+    height: 25px;
+    border: 1px solid black;
+    display: flex;
+}
+
+.formaPagamentoValor{
+    background-color: #ccc;
+    border: none;
+    margin-left: 340px;
+    text-align: right;
 }

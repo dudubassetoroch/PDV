@@ -54,3 +54,18 @@
     <script src="docs/JS/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+function finalizarvenda(){
+  // let valorRecebido = document.getElementById('valorRecebido').value
+  // if(valorRecebido == null){
+  //   alert("Receba a venda!")
+  // }
+
+let valorFinalSalvo = Number(localStorage.getItem('valorfinal'))
+
+  
+}
