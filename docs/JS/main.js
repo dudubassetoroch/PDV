@@ -121,6 +121,7 @@ function cadastraFisica(){
     let celular = document.getElementById('celular').value;
     let email = document.getElementById('email').value;
  
+    localStorage.setItem('cpf', cpf)
       
 
     let clientes = JSON.parse(localStorage.getItem('clientes')) || []
@@ -323,7 +324,7 @@ window.addEventListener('load', function () {
   let razaoEmpSalvo = localStorage.getItem('razaoEmp');
 
     if(compEmpSalvo && bairroEmpSalvo && numeroEmpSalvo && endEmpSalvo && ufEmpSalvo && cidadeEmpSalvo && ieEmpSalvo && cnpjEmpSalvo && fantasiaEmpSalvo && codEmpSalvo && razaoEmpSalvo){
-        document.getElementById('compEmpC').innerHTML = compEmpSalvo;
+        document.getElementById('compEmpC').innerText = compEmpSalvo;
         document.getElementById('bairroEmpC').innerHTML = bairroEmpSalvo;
         document.getElementById('numeroEmpC').innerHTML = numeroEmpSalvo;
         document.getElementById('endEmpC').innerHTML = endEmpSalvo;
@@ -613,3 +614,69 @@ function finalizarvenda(){
 
 }
 
+window.addEventListener('load', function() {
+  let empresaSalva = localStorage.getItem('fantasiaEmp');
+  if(empresaSalva){
+    let recebeEmp = document.getElementById('recebeFantasia');
+      recebeEmp.innerText = empresaSalva;
+  };
+
+  let enderecoSalvo = localStorage.getItem('endEmp');
+    if(enderecoSalvo){
+      let recebeEnd = document.getElementById('recebeEndereco');
+        recebeEnd.innerText = enderecoSalvo;
+    };
+
+  let cnpjSalvo = localStorage.getItem('cnpjEmp');
+    if(cnpjSalvo){
+      let recebeCnpj = document.getElementById('recebeCnpj');
+        recebeCnpj.innerText = cnpjSalvo;
+     };
+  
+  let cidadeSalvo = localStorage.getItem('cidadeEmp');
+     if(cidadeSalvo){
+        let recebeCidae = document.getElementById('recebeCidade');
+        recebeCidae.innerText = cidadeSalvo;
+     };
+  
+  let ieSalva = localStorage.getItem('ieEmp')
+     if(ieSalva){
+        let recebeIe = document.getElementById('recebeIe')
+        recebeIe.innerText = ieSalva
+     }
+
+  let vendedorSalvo = localStorage.getItem('vendedorSelecionado');
+     if(vendedorSalvo){
+        let recebeVendedor = document.getElementById('recebeVendedor');
+        recebeVendedor.innerText = `Vendedor: ${vendedorSalvo}`
+     };
+
+  let userSalvo = localStorage.getItem('userCad');
+     if(userSalvo){
+        let recebeUser = document.getElementById('recebeUsuario');
+        recebeUser.innerText = `Usuário: ${userSalvo}`;
+     };
+
+  let clienteSalvo = localStorage.getItem('clienteSelecionado')
+    if (clienteSalvo) {
+      let clSalvo = document.getElementById('RecebeCliente')
+      clSalvo.innerText = `Cliente: ${clienteSalvo}`
+  }
+
+  let CPFSalvo = localStorage.getItem('cpf');
+    if(CPFSalvo){
+      let recebeCpf = document.getElementById('recebeCPF')
+        recebeCpf.innerText = `CPF: ${CPFSalvo}`
+    }else{
+      document.getElementById('recebeCPF').innerText = "Não Cadastrado"
+    };
+  
+  let RGSalvo = localStorage.getItem('cpf')
+    if(RGSalvo){
+      let recebeRg = document.getElementById('recebeRG')
+        recebeRg.innerText = `RG: ${RGSalvo}`
+    }else{
+      document.getElementById('recebeRG').innerText = "Não cadastrado"
+    }
+
+});
